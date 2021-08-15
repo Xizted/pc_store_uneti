@@ -1,0 +1,91 @@
+<!-- Heredamos el layout.html -->
+{% extends 'layout/layout.html' %} {% block content %}
+<section class="mt-10 mb-20">
+  <!-- Product container -->
+  <div class="container">
+    <div class="row">
+      <!--Product Image-->
+      <div
+        class="col-12 col-md-6 p-5 border-end animate__animated animate__fadeIn"
+      >
+        <img
+          src="{{ url_for('static', filename='images/product.jpg') }}"
+          alt="pc"
+          class="w-100"
+          loading="lazy"
+        />
+      </div>
+      <!--END Product Image-->
+      <!-- Product Description-->
+      <form
+        action="#"
+        class="
+          product__description
+          col-12 col-md-6
+          p-5
+          animate__animated animate__fadeIn animate__delay-1s
+        "
+      >
+        <!-- Product Title -->
+        <h4 class="fs-1">ASUS Bronze Cylon Intel Core i5-10400/8GB/480GBSSD</h4>
+        <!-- END Product Title -->
+        <!-- Product Price -->
+        <h3 class="text-primary product__price">500$</h3>
+        <!-- END Product Price -->
+        <!-- Product Rating -->
+        <div class="product__star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <i class="far fa-star"></i>
+        </div>
+        <!-- END Product Rating -->
+        <!-- Product Seller -->
+        <p class="fs-4 text-black-50 pt-3">
+          Venvido por <span class="fw-bold">Pc_Store</span>
+        </p>
+        <!-- END Product Seller -->
+        <!-- Product info -->
+        <ul class="product__info">
+          <li class="pt-5">
+            <p class="fw-bold fs-4 d-inline pe-5">Marca:</p>
+            <p class="fs-3 d-inline text-black-50">Asus</p>
+          </li>
+          <li class="mt-5">
+            <p class="fw-bold fs-4">Envio:</p>
+            <select class="form-select fs-4" required>
+              <option selected disabled>Selecciona la ciudad</option>
+              <option value="1">Caracas</option>
+              <option value="2">Bolivar</option>
+              <option value="3">Puerto Ordaz</option>
+            </select>
+          </li>
+          <li class="mt-5">
+            <p class="fw-bold fs-4">Cantidad:</p>
+            <input
+              type="number"
+              class="form-control fs-4"
+              placeholder="Ingrese una cantidad"
+              min="1"
+              max="10"
+              value="1"
+              required
+            />
+          </li>
+          <li class="mt-5">
+            <p class="fw-bold fs-4 d-inline pe-5">Envio a Domicilio:</p>
+            <p class="fs-3 d-inline text-success fw-bold">Disponible!</p>
+          </li>
+        </ul>
+        <!-- END Product info -->
+        <button class="btn btn-primary bg-black border-dark fs-3 mt-5 px-5">
+          Comprar
+        </button>
+      </form>
+    </div>
+    <!-- END Product Description-->
+  </div>
+  <!-- Product container -->
+</section>
+{% endblock %}
